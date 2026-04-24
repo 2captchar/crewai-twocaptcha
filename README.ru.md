@@ -3,9 +3,9 @@
 [![PyPI](https://img.shields.io/pypi/v/crewai-twocaptcha.svg)](https://pypi.org/project/crewai-twocaptcha/)
 [![Python](https://img.shields.io/pypi/pyversions/crewai-twocaptcha.svg)](https://pypi.org/project/crewai-twocaptcha/)
 [![CI](https://github.com/2captchar/crewai-twocaptcha/actions/workflows/ci.yml/badge.svg)](https://github.com/2captchar/crewai-twocaptcha/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/2captchar/crewai-twocaptcha/blob/main/LICENSE)
 
-> **Язык:** [English](./README.md) · **Русский**
+> **Язык:** [English](https://github.com/2captchar/crewai-twocaptcha/blob/main/README.md) · **Русский**
 
 `TwoCaptchaSolverTool` — инструмент для [CrewAI](https://github.com/crewAIInc/crewAI),
 который решает капчи через сервис [2Captcha](https://2captcha.com/) и возвращает
@@ -206,4 +206,4 @@ python scripts/live_check.py
 
 ## Лицензия
 
-MIT — см. [LICENSE](./LICENSE).
+MIT — см. [LICENSE](https://github.com/2captchar/crewai-twocaptcha/blob/main/LICENSE).

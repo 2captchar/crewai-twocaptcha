@@ -1,6 +1,6 @@
 [project]
 name = "crewai-twocaptcha"
-version = "0.1.0"
+version = "0.1.1"
 description = "CrewAI tool for solving captchas via the 2Captcha service (reCAPTCHA v2/v3, Cloudflare Turnstile, image, GeeTest)."
 readme = "README.md"
 license = { file = "LICENSE" }

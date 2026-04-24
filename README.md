@@ -3,9 +3,9 @@
 [![PyPI](https://img.shields.io/pypi/v/crewai-twocaptcha.svg)](https://pypi.org/project/crewai-twocaptcha/)
 [![Python](https://img.shields.io/pypi/pyversions/crewai-twocaptcha.svg)](https://pypi.org/project/crewai-twocaptcha/)
 [![CI](https://github.com/2captchar/crewai-twocaptcha/actions/workflows/ci.yml/badge.svg)](https://github.com/2captchar/crewai-twocaptcha/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/2captchar/crewai-twocaptcha/blob/main/LICENSE)
 
-> **Languages:** **English** · [Русский](./README.ru.md)
+> **Languages:** **English** · [Русский](https://github.com/2captchar/crewai-twocaptcha/blob/main/README.ru.md)
 
 `TwoCaptchaSolverTool` — a [CrewAI](https://github.com/crewAIInc/crewAI) tool that
 solves captchas through the [2Captcha](https://2captcha.com/) service and
@@ -201,4 +201,4 @@ copied from your browser DevTools.
 
 ## License
 
-MIT — see [LICENSE](./LICENSE).
+MIT — see [LICENSE](https://github.com/2captchar/crewai-twocaptcha/blob/main/LICENSE).
