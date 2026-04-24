@@ -1,18 +1,28 @@
 # crewai-twocaptcha
 
+[![PyPI](https://img.shields.io/pypi/v/crewai-twocaptcha.svg)](https://pypi.org/project/crewai-twocaptcha/)
+[![Python](https://img.shields.io/pypi/pyversions/crewai-twocaptcha.svg)](https://pypi.org/project/crewai-twocaptcha/)
+[![CI](https://github.com/2captchar/crewai-twocaptcha/actions/workflows/ci.yml/badge.svg)](https://github.com/2captchar/crewai-twocaptcha/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
+> **Languages:** **English** · [Русский](./README.ru.md)
+
 `TwoCaptchaSolverTool` — a [CrewAI](https://github.com/crewAIInc/crewAI) tool that
 solves captchas through the [2Captcha](https://2captcha.com/) service and
 returns the solution token (e.g. `g-recaptcha-response`) to your agent.
 
-Supported captcha types:
+## Supported captcha types
 
-| `captcha_type` | 2Captcha method | Required input fields |
-| -------------- | --------------- | --------------------- |
-| `recaptcha_v2` | `userrecaptcha`            | `website_url`, `sitekey` |
-| `recaptcha_v3` | `userrecaptcha` + `version=v3` | `website_url`, `sitekey`, `action` (optional `min_score`) |
-| `turnstile`    | `turnstile`                | `website_url`, `sitekey` (optional `action`) |
-| `image`        | `base64`                   | `body` (base64-encoded image) |
-| `geetest`      | `geetest`                  | `website_url`, `gt`, `challenge` |
+| `captcha_type` | 2Captcha method | Required input fields | Verified end-to-end |
+| -------------- | --------------- | --------------------- | ------------------- |
+| `recaptcha_v2` | `userrecaptcha`                | `website_url`, `sitekey` | ✔ |
+| `recaptcha_v3` | `userrecaptcha` + `version=v3` | `website_url`, `sitekey`, `action` (optional `min_score`) | ✔ |
+| `turnstile`    | `turnstile`                    | `website_url`, `sitekey` (optional `action`) | ✔ |
+| `image`        | `base64`                       | `body` (base64-encoded image) | ✔ |
+| `geetest`      | `geetest`                      | `website_url`, `gt`, `challenge` | unit-tested; live requires fresh `challenge` |
+
+End-to-end verification is performed against the official 2Captcha demo pages;
+reproduce it yourself with `scripts/live_check.py` (see below).
 
 ## Installation
 
@@ -167,6 +177,20 @@ otherwise be indistinguishable from a real token for the agent):
   (`ERROR_WRONG_USER_KEY`, `ERROR_CAPTCHA_UNSOLVABLE`, …) or we exceeded
   `config.max_attempts * config.poll_interval` seconds.
 - `requests.HTTPError` — non-2xx HTTP response from the API.
+
+## Reproducing the end-to-end check
+
+The repository ships with `scripts/live_check.py`, which runs every captcha
+type against 2Captcha's official demo pages:
+
+```bash
+export TWOCAPTCHA_API_KEY="your-key"
+python scripts/live_check.py
+```
+
+Total cost is roughly $0.01–0.02 per full run. Use `--no-image` to skip the
+image case or `--geetest GT CHALLENGE` to test GeeTest with a fresh challenge
+copied from your browser DevTools.
 
 ## Links
 

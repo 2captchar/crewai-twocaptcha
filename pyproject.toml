@@ -49,8 +49,11 @@ packages = ["src/crewai_twocaptcha"]
 include = [
     "src/crewai_twocaptcha",
     "README.md",
+    "README.ru.md",
     "LICENSE",
     "pyproject.toml",
+    "scripts",
+    "tests",
 ]
 
 [tool.pytest.ini_options]
